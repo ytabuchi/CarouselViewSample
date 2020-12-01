@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="CarouselViewSample.Views.CarouselViewPagePrism"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True">
+
+    <CarouselView ItemsSource="{Binding Monkeys}">
+        <CarouselView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout>
+                    <Frame HeightRequest="300"
+                           Margin="20"
+                           HorizontalOptions="Center"
+                           VerticalOptions="CenterAndExpand"
+                           BorderColor="DarkGray"
+                           CornerRadius="5"
+                           HasShadow="True">
+                        <StackLayout>
+                            <Label HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   FontAttributes="Bold"
+                                   FontSize="Large"
+                                   Text="{Binding Name}" />
+                            <Image WidthRequest="150"
+                                   HeightRequest="150"
+                                   HorizontalOptions="Center"
+                                   Aspect="AspectFill"
+                                   Source="{Binding ImageUrl}" />
+                            <Label HorizontalOptions="Center" Text="{Binding Location}" />
+                            <Label HorizontalOptions="Center"
+                                   FontAttributes="Italic"
+                                   LineBreakMode="TailTruncation"
+                                   MaxLines="5"
+                                   Text="{Binding Details}" />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </DataTemplate>
+        </CarouselView.ItemTemplate>
+    </CarouselView>
+</ContentPage>
